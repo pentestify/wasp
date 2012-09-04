@@ -10,4 +10,8 @@ set :public_folder,     root_dir + '/public'
 set :logging,           true
 set :run,               false
 
+log = File.new("log/wasp.log", "a")
+STDOUT.reopen(log)
+STDERR.reopen(log)
+
 run Sinatra::Application
